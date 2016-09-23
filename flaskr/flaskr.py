@@ -28,6 +28,7 @@ environ.register(
         'jquery/dist/jquery.min.js',
         'tether/dist/js/tether.min.js',
         'bootstrap/dist/js/bootstrap.min.js',
+        'scripts/main.js',
         output='bundle.js'
     )
 )
