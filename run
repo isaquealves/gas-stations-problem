@@ -1,0 +1,2 @@
+#!/bin/sh
+PYTHONPATH="$PWD/flaskr" waitress-serve --port=$PORT flaskr:app
