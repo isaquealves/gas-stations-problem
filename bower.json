@@ -1,0 +1,22 @@
+{
+  "name": "gas_station",
+  "authors": [
+    "Isaque Alves <isaquealves@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.4",
+    "Bootflat": "bootflatv2#^2.0.4"
+  }
+}
