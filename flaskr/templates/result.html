@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-sm-left text-md-left text-lg-left">
+      <h2>Result</h2>
+      <ul>
+      {% for key, value in results.items() %}
+        <li>
+          {{ key }} &rarr; {{ value }}
+        </li>
+
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
