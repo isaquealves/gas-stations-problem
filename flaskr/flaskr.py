@@ -36,6 +36,10 @@ environ.register(
     Bundle(
         'bootstrap/dist/css/bootstrap.min.css',
         'Bootflat/bootflat/css/bootflat.min.css',
+        Bundle(
+            'styles/main.scss',
+            filters ='sass'
+        ),
         output='styles.css'
     )
 )
