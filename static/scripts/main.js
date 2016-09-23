@@ -2,6 +2,9 @@
 
 	;( function( $, window, document, undefined )
 	{
+		$('.reloadBtn').on('click', function(e){
+				document.location.reload(true);
+		});
 		// feature detection for drag&drop upload
 
 		var isAdvancedUpload = function()
@@ -26,7 +29,7 @@
 					$label.text( files[ 0 ].name );
 				};
 
-			
+
 
 			// letting the server side to know we are going to make an Ajax request
 			$form.append( '<input type="hidden" name="ajax" value="1" />' );
@@ -109,7 +112,10 @@
 						contentType:	false,
 						processData:	false,
 					}).done(function(data){
-							$('#content').html(data);
+							$('#content').html($.parseHTML(data));
+							$('.reloadBtn').on('click', function(e){
+									document.location.reload(true);
+							});
 						}).fail(function(xhqr, textStatus, error)
 						{
 							$('#content').html(textStatus);

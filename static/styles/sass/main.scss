@@ -19,7 +19,7 @@ body {
     position:fixed;
     top:1em;
     right: 1em;
-
+    z-index:9999;
     button {
       span {
         font-weight: bolder;
@@ -30,6 +30,12 @@ body {
         fill: #dce2e3 !important
       }
     }
+  }
+
+  .reload_btn {
+    @extend .reload_button;
+    position:relative;
+    float:right;
   }
 
 }
