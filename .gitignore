@@ -1,6 +1,7 @@
 Solution.md
 flaskr/static/.webassets-cache
 flaskr/static
+flaskr/uploads/*
 static/jquery
 static/Bootflat
 static/bootstrap
