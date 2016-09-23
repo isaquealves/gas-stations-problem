@@ -1,12 +1,75 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script src="https://use.fontawesome.com/5feea73de5.js"></script>
+  {% assets "stylesheets" %}
+      <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
+  {% endassets %}
+  <style media="screen">
+  .description{
+    background: #ECF0F1;
+    border:1px solid #dce2e3;
+    padding:1rem;
+    border-radius:9px;
+    margin: 1rem auto;
+  }
+  p {
+    padding: 1rem;
+  }
+    .fa {
+      vertical-align: middle;
+    }
+    .button_text {
+      font-size: 2em;
+      vertical-align: middle;
+      margin-left: 1em
+    }
+    .hidden {
+      display:none;
+    }
+  </style>
   <title>Gas Stations</title>
 </head>
 <body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <h1>Gas Stations Problem</h1>
+      <div class="description">
+        <p>
+          Supply a file in which each line is a string/array consisting of the following elements: <strong>N</strong> which will be the number of gas stations in a circular route and each subsequent element will be the string <strong>g:c</strong> where <em>g</em> is the amount of gas in gallons <em>at that gas station</em> and <em>c</em> will be the amount of gallons of gas <em>needed to get to the following gas station</em>. For example one line may be: ["4","3:1","2:2","1:2","0:1"].</p>
+
+        <p>
+          The goal is to return the index of the starting gas station that will allow you to travel around the whole route once, otherwise return the string impossible.
+        </p>
+      </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="text-xs-center text-sm-center text-md-center text-lg-center ">
+        <button type="button" id="upload-btn" class="btn btn-lg btn-info" name="button"><i class="fa fa-upload fa-5x"></i> <span class="button_text">UPLOAD A FILE</span></button>
+        <input type="file" name="file" id="upload-file" class="hidden">
+      </div>
+
+    </div>
+  </div>
 
 
-
+</div>
+{% assets "javascripts" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+<script type="text/javascript">
+  (function(){
+    $('#upload-btn').on('click', function(e) {
+      $('#upload-file').trigger('click');
+    })
+  })($);
+</script>
 </body>
 </html>
