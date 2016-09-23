@@ -9,7 +9,6 @@ from flask import (Flask,
                    flash)
 from flask_assets import Environment, Bundle
 from unipath import Path
-from contextlib import closing
 
 DEBUG = True
 SECRET_KEY = ''
@@ -38,8 +37,8 @@ environ.register(
         'bootstrap/dist/css/bootstrap.min.css',
         'Bootflat/bootflat/css/bootflat.min.css',
         Bundle(
-            'styles/main.scss',
-            filters ='sass'
+            'styles/sass/main.scss',
+            filters ='pyscss'
         ),
         output='styles.css'
     )
