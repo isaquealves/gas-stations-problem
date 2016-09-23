@@ -23,8 +23,10 @@
 				droppedFiles = false,
 				showFiles	 = function( files )
 				{
-					$label.text( files.length > 1 ? ( $input.attr( 'data-multiple-caption' ) || '' ).replace( '{count}', files.length ) : files[ 0 ].name );
+					$label.text( files[ 0 ].name );
 				};
+
+			
 
 			// letting the server side to know we are going to make an Ajax request
 			$form.append( '<input type="hidden" name="ajax" value="1" />' );
@@ -87,7 +89,7 @@
 					e.preventDefault();
 
 					// gathering the form data
-					var ajaxData = new FormData( $form.get( 0 ) );
+					var ajaxData = new FormData( $form );
 					if( droppedFiles )
 					{
 						$.each( droppedFiles, function( i, file )
@@ -102,24 +104,18 @@
 						url: 			$form.attr( 'action' ),
 						type:			$form.attr( 'method' ),
 						data: 			ajaxData,
-						dataType:		'json',
+						dataType:		'html',
 						cache:			false,
 						contentType:	false,
 						processData:	false,
-						complete: function()
+					}).done(function(data){
+							$('#content').html(data);
+						}).fail(function(xhqr, textStatus, error)
 						{
+							$('#content').html(textStatus);
+						}).always(function(){
 							$form.removeClass( 'is-uploading' );
-						},
-						success: function( data )
-						{
-							$form.addClass( data.success == true ? 'is-success' : 'is-error' );
-							if( !data.success ) $errorMsg.text( data.error );
-						},
-						error: function()
-						{
-							alert( 'Error. Please, contact the webmaster!' );
-						}
-					});
+						});
 				}
 				else // fallback Ajax solution upload for older browsers
 				{
