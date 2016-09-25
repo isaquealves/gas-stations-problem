@@ -21,7 +21,7 @@ def startedAt(gasList, costList):
         tank += gasList[i] - costList[i]
         if tank < 0:
             tank = 0
-            firstStation += i
+        firstStation =  i + 1
     if gasSum < costSum:
         return 'impossible'
     return firstStation
